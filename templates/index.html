@@ -24,11 +24,27 @@
                 </select>
 
                 <select name="centro" id="centro" class="w-full p-3 mb-4 border rounded-xl" onchange="checkOtro(this.value)">
-                    <option value="Servicios Financieros">Servicios Financieros (Bogotá)</option>
-                    <option value="CDTI">CDTI (Cali)</option>
-                    <option value="OTRO">Otro... ¿Cuál?</option>
-                </select>
-
+    <optgroup label="Bogotá">
+        <option value="Servicios Financieros">Servicios Financieros</option>
+        <option value="Gestión Mercados Logística TIC">Gestión Mercados, Logística y TIC's</option>
+        <option value="Talento Humano en Salud">Talento Humano en Salud</option>
+        <option value="Electricidad Electrónica Telecom">Electricidad, Electrónica y Telecom.</option>
+    </optgroup>
+    <optgroup label="Antioquia">
+        <option value="Hábitat y Construcción">Hábitat y la Construcción</option>
+        <option value="Manufactura Avanzada">Tecnología de la Manufactura Avanzada (CTMA)</option>
+        <option value="Diseño y Moda">Diseño, Confección y Moda</option>
+    </optgroup>
+    <optgroup label="Valle del Cauca">
+        <option value="CDTI">Diseño Tecnológico Industrial (CDTI)</option>
+        <option value="CEAI">Electricidad y Automatización (CEAI)</option>
+    </optgroup>
+    <optgroup label="Atlántico">
+        <option value="Industrial y Aviación">Industrial y de Aviación</option>
+        <option value="Colombo Alemán">Nacional Colombo Alemán</option>
+    </optgroup>
+    <option value="OTRO">Otro... ¿Cuál?</option>
+</select>
                 <input type="text" name="otro_centro" id="otro_centro" placeholder="Especifique..." class="w-full p-3 mb-4 border rounded-xl hidden">
                 <input name="programa" list="progs" placeholder="Programa de formación..." class="w-full p-3 mb-4 border rounded-xl" required>
                 <datalist id="progs">
