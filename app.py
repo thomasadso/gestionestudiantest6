@@ -29,21 +29,17 @@ def index():
 
 @app.route('/registrar', methods=['POST'])
 def registrar():
-    # Lógica para manejar el centro si eligen "OTRO"
-    centro = request.form.get("centro")
-    if centro == "OTRO":
-        centro = request.form.get("otro_centro")
-
-    nuevo = {
+    # Usamos request.form para recibir los datos del HTML que te di
+    nuevo_aprendiz = {
         "nombre": request.form.get("nombre"),
         "correo": request.form.get("correo"),
         "nivel": request.form.get("nivel"),
-        "centro": centro,
+        "centro": request.form.get("centro") if request.form.get("centro") != "OTRO" else request.form.get("otro_centro"),
         "programa": request.form.get("programa"),
         "ficha": request.form.get("ficha"),
         "trimestre": request.form.get("trimestre")
     }
-    coleccion.insert_one(nuevo)
+    coleccion.insert_one(nuevo_aprendiz)
     return redirect(url_for('index'))
 
 @app.route('/eliminar/<id>')
